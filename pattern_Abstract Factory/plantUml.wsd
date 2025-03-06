@@ -1,1 +1,48 @@
 
+@startuml
+abstract class Chair {
+  + sit(): void
+}
+
+abstract class Table {
+  + use(): void
+}
+
+class VictorianChair {
+  + sit(): void
+}
+
+class VictorianTable {
+  + use(): void
+}
+
+class ZembabovskiyChair {
+  + sit(): void
+}
+
+class ZembabovskiyTable {
+  + use(): void
+}
+
+abstract class FurnitureFactory {
+  + createChair(): Chair*
+  + createTable(): Table*
+}
+
+class VictorianFactory {
+  + createChair(): Chair*
+  + createTable(): Table*
+}
+
+class ZembabovskyFactory {
+  + createChair(): Chair*
+  + createTable(): Table*
+}
+
+Chair <|-- VictorianChair
+Chair <|-- ZembabovskiyChair
+Table <|-- VictorianTable
+Table <|-- ZembabovskiyTable
+FurnitureFactory <|-- VictorianFactory
+FurnitureFactory <|-- ZembabovskyFactory
+@enduml
